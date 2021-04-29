@@ -71,6 +71,10 @@ img {
   width: 20px;
   height: 20px;
   fill: var(--social-icons);
+
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-icons-link {
   display: flex;
@@ -80,6 +84,10 @@ img {
   height: 44px;
   border-radius: 50%;
   background-color: var(--alt-title-color);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-icons-link:hover .social-icons-svg,
 .social-icons-link:focus .social-icons-svg {
@@ -129,22 +137,49 @@ img {
 .site-nav {
   display: inline-flex;
 }
+
 .link-nav:not(:last-child) {
   margin-right: 50px;
 }
 
 .site-nav .link {
+  position: relative;
   font-family: var(--main-font);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .link {
   display: block;
   color: inherit;
   text-decoration: none;
+}
+
+.link-nav .link::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -29px;
+  opacity: 0;
+
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link-nav .link:hover::after {
+  opacity: 1;
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -159,6 +194,10 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--alt-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .auth-nav .link:hover,
 .auth-nav .link:focus {
@@ -177,7 +216,7 @@ img {
   justify-content: center;
 }
 
--- > .auth-nav .link-auth {
+.auth-nav .link-auth {
   display: inline-block;
 }
 .link-auth:not(:last-child) {
@@ -259,6 +298,10 @@ p {
   background-color: var(--team-bg);
   cursor: pointer;
   border: none;
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-nav button:hover,
 .button-nav button:focus,
@@ -411,6 +454,10 @@ p {
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   background-color: var(--alt-title-color);
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-item:hover {
@@ -482,6 +529,10 @@ p {
   height: 92px;
   border-radius: 4px;
   border: 1px solid #afb1b8;
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-list {
@@ -505,6 +556,10 @@ p {
   justify-content: center;
   width: 170px;
   height: 92px;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link:hover .clients-icon,
 .client-link:focus .clients-icon {
@@ -603,6 +658,10 @@ p {
   height: 44px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-links-item .social-icons-link:hover .social-icons-svg,
 .social-links-item .social-icons-link:focus .social-icons-svg {
@@ -612,4 +671,32 @@ p {
 .social-icons-link:hover,
 .social-icons-link:focus {
   background-color: var(--accent-color);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 528px;
+  min-height: 581px;
+  padding: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
