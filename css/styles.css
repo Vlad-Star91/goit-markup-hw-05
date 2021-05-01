@@ -178,7 +178,8 @@ img {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.link-nav .link:hover::after {
+.link-nav .link:hover::after,
+.link-nav .link:focus::after {
   opacity: 1;
 }
 .site-nav .link:hover,
