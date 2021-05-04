@@ -178,10 +178,13 @@ img {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .link-nav .link:hover::after,
-.link-nav .link:focus::after {
+.link-nav .link:focus::after,
+.link-nav .link:active::after {
   opacity: 1;
 }
+
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
@@ -273,6 +276,7 @@ p {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   font-family: var(--main-font);
+  font-weight: bold;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
@@ -384,6 +388,7 @@ p {
 
 .label {
   font-family: var(--main-font);
+  font-weight: bold;
   font-size: 14px;
   line-height: 16px;
   text-align: center;
