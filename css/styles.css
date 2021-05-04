@@ -142,14 +142,14 @@ img {
   margin-right: 50px;
 }
 
-.site-nav .link {
+.site-nav .link.current {
   position: relative;
   font-family: var(--main-font);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  color: var(--title-color);
+  color: var(--accent-color);
 
   transition-property: color;
   transition-duration: 250ms;
@@ -162,7 +162,7 @@ img {
   text-decoration: none;
 }
 
-.link-nav .link::after {
+.link-nav .link.current::after {
   content: '';
   display: block;
   width: 100%;
@@ -172,7 +172,7 @@ img {
   position: absolute;
   left: 0;
   bottom: -29px;
-  opacity: 0;
+  opacity: 1;
 
   transition-property: opacity;
   transition-duration: 250ms;
@@ -180,8 +180,7 @@ img {
 }
 
 .link-nav .link:hover::after,
-.link-nav .link:focus::after,
-.link-nav .link:active::after {
+.link-nav .link:focus::after {
   opacity: 1;
 }
 
@@ -606,6 +605,9 @@ p {
   width: 106px;
   height: 60px;
   fill: var(--social-icons);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link {
